@@ -1,0 +1,510 @@
+/* ==================== ОСНОВНЫЕ СТИЛИ ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: #fff9f4;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ==================== ШАПКА ==================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand h1 {
+  font-size: 1.6em;
+  color: #ff6b35;
+}
+
+.sub {
+  font-size: 0.85em;
+  color: #666;
+}
+
+.burger-logo {
+  width: 50px;
+  height: 50px;
+}
+
+.rotating {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==================== МЕНЮ НАВИГАЦИИ ==================== */
+.top-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.top-nav a:hover {
+  color: #ff6b35;
+}
+
+.top-nav .cta {
+  background: #ff6b35;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.top-nav .cta:hover {
+  background: #e95b28;
+}
+
+/* ==================== ГАМБУРГЕР ==================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #333;
+  border-radius: 3px;
+}
+
+/* ==================== HERO ==================== */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  background: linear-gradient(135deg, #ffe2d1, #fff);
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-left h2 {
+  font-size: 2.2em;
+  color: #ff6b35;
+  margin-bottom: 15px;
+}
+
+.hero-left p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-photo {
+  width: 300px;
+  height: 300px;
+  background-image: url('https://images.unsplash.com/photo-1606756791922-3b5a0c0f4c20');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ==================== КНОПКИ ==================== */
+.btn {
+  display: inline-block;
+  background: #ff6b35;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.3s;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: #e95b28;
+  transform: translateY(-3px);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 2px solid #ff6b35;
+  color: #ff6b35;
+}
+
+.btn.ghost:hover {
+  background: #ff6b35;
+  color: #fff;
+}
+
+/* ==================== РАЗДЕЛЫ ==================== */
+.section-title {
+  text-align: center;
+  font-size: 1.8em;
+  margin: 50px 0 30px;
+  color: #333;
+}
+
+/* ==================== МЕНЮ ==================== */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  padding: 0 10%;
+}
+
+.menu-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.menu-photo {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-item h4 {
+  margin: 15px;
+  font-size: 1.2em;
+  color: #ff6b35;
+}
+
+.menu-item p {
+  margin: 0 15px 10px;
+}
+
+.menu-item .meta {
+  font-weight: bold;
+}
+
+.add {
+  width: 100%;
+  background: #ff6b35;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add:hover {
+  background: #e95b28;
+}
+
+/* ==================== PROMO ==================== */
+.promo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.promo-card {
+  width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.promo-card:hover {
+  transform: scale(1.03);
+}
+
+.promo-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.promo-card h4 {
+  margin: 10px 15px;
+  color: #ff6b35;
+}
+
+/* ==================== ОТЗЫВЫ ==================== */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 0 10%;
+}
+
+.review {
+  background: #fff;
+  border-left: 5px solid #ff6b35;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.review p {
+  margin-bottom: 10px;
+}
+
+.author {
+  font-style: italic;
+  color: #666;
+}
+
+/* ==================== О НАС ==================== */
+.about-text {
+  text-align: center;
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10%;
+}
+
+/* ==================== TEAM ==================== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 0 10%;
+}
+
+.team-member {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.team-member img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+/* ==================== ORDER FORM ==================== */
+.order-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 10%;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+.order-form button {
+  align-self: flex-start;
+}
+
+/* ==================== MAP ==================== */
+.map-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.map-container iframe {
+  width: 90%;
+  height: 300px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* ==================== FAQ ==================== */
+.accordion {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 10%;
+}
+
+.acc-item {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.acc-head {
+  width: 100%;
+  background: #ff6b35;
+  color: #fff;
+  border: none;
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #fffaf7;
+  padding: 0 16px;
+}
+
+.acc-item.open .acc-body {
+  max-height: 100px;
+  padding: 10px 16px;
+}
+
+/* ==================== CONTACT ==================== */
+.contact-section {
+  text-align: center;
+  background: #fffaf7;
+  padding: 30px 10%;
+}
+
+.contact-section p {
+  margin: 8px 0;
+  font-size: 1.1em;
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+}
+
+.footer .to-top {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: #ff6b35;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: none;
+}
+
+/* ==================== АНИМАЦИИ ==================== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* ==================== АДАПТИВНОСТЬ ==================== */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-right {
+    margin-top: 30px;
+  }
+
+  .top-nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  .top-nav.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-photo {
+    height: 150px;
+  }
+
+  .promo-card {
+    width: 90%;
+  }
+
+  .hero-photo {
+    width: 250px;
+    height: 250px;
+  }
+}
