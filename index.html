@@ -1,118 +1,249 @@
---- index.html ---
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burger House</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shama Burgers — Шымкент</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<!-- ==================== HEADER ==================== -->
 <header class="site-header">
-    <div class="brand">
-        <img src="https://images.unsplash.com/photo-1606755962773-0f3c57ae8e96?q=80&w=100&auto=format&fit=crop" alt="Burger Logo" class="burger-logo rotating">
-        <h1>Burger House</h1>
+  <div class="brand">
+    <svg class="burger-logo rotating" viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="32" cy="32" r="30" fill="url(#grad)" />
+      <g filter="url(#glow)">
+        <rect x="12" y="22" width="40" height="6" rx="3" fill="#ffb347"/>
+        <rect x="12" y="30" width="40" height="6" rx="3" fill="#8b4513"/>
+        <rect x="12" y="38" width="40" height="6" rx="3" fill="#ffb347"/>
+      </g>
+      <defs>
+        <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff7b47"/>
+          <stop offset="100%" stop-color="#ff6b35"/>
+        </radialGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+          <feMerge>
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+    <div>
+      <h1>Shama Burgers</h1>
+      <p class="sub">г. Шымкент • +7 702 507 3828</p>
     </div>
-    <nav class="top-nav">
-        <a href="#menu">Меню</a>
-        <a href="#promo">Акции</a>
-        <a href="#faq">Вопросы</a>
-        <a href="#contact" class="cta">Заказать</a>
-    </nav>
+  </div>
+  <button class="hamburger" aria-label="Открыть меню">
+    <span></span><span></span><span></span>
+  </button>
+  <nav class="top-nav">
+    <a href="#menu">🍔 Меню</a>
+    <a href="#promo">🎁 Акции</a>
+    <a href="#reviews">💬 Отзывы</a>
+    <a href="#about">🏠 О нас</a>
+    <a href="#team">👨‍🍳 Команда</a>
+    <a href="#contact" class="cta">📍 Контакты</a>
+  </nav>
 </header>
 
-<section class="hero">
-    <div class="hero-left">
-        <h2>Самые вкусные бургеры города!</h2>
-        <p>Попробуй наши новинки и почувствуй вкус, который ты запомнишь надолго.</p>
-        <a href="#menu" class="btn">Посмотреть меню</a>
-    </div>
-    <div class="hero-right">
-        <div class="hero-photo"></div>
-    </div>
+<!-- ==================== HERO ==================== -->
+<section class="hero fade-in">
+  <div class="hero-left">
+    <h2>🔥 Самые сочные бургеры в Шымкенте!</h2>
+    <p>Попробуй легендарный Shama Burger — вкус, который запомнится навсегда!</p>
+    <a href="#menu" class="btn">Посмотреть меню</a>
+    <a href="#promo" class="btn ghost">Смотреть акции</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo"></div>
+  </div>
 </section>
 
-<section id="menu" class="menu-section">
-    <h3 class="section-title">Меню бургеров</h3>
-    <div class="menu-grid">
-        <div class="menu-item">
-            <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1606755962773-0f3c57ae8e96?q=80&w=600');"></div>
-            <h4>Классический бургер</h4>
-            <button class="add">Добавить</button>
-        </div>
-        <div class="menu-item">
-            <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1604147706283-d8ec2a0ca36a?q=80&w=600');"></div>
-            <h4>Чизбургер</h4>
-            <button class="add">Добавить</button>
-        </div>
-        <div class="menu-item">
-            <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=600');"></div>
-            <h4>Двойной бургер</h4>
-            <button class="add">Добавить</button>
-        </div>
+<!-- ==================== MENU ==================== -->
+<section id="menu" class="menu-section fade-up">
+  <h3 class="section-title">🍔 Наше меню</h3>
+  <div class="menu-grid">
+    <!-- карточки меню -->
+    <div class="menu-item">
+      <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1606756791922-3b5a0c0f4c20');"></div>
+      <h4>Shama Classic</h4>
+      <p>Классический бургер с говядиной и фирменным соусом</p>
+      <p class="meta">2500 ₸</p>
+      <button class="add">Добавить</button>
     </div>
+    <div class="menu-item">
+      <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1604917877936-5f0aef8b9f2e');"></div>
+      <h4>Hot Burger</h4>
+      <p>Острый бургер с перцем чили и хрустящей булочкой</p>
+      <p class="meta">2800 ₸</p>
+      <button class="add">Добавить</button>
+    </div>
+    <div class="menu-item">
+      <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1550547660-d9450f859349');"></div>
+      <h4>Cheese Burger</h4>
+      <p>Двойная порция сыра и сочная котлета</p>
+      <p class="meta">2700 ₸</p>
+      <button class="add">Добавить</button>
+    </div>
+    <div class="menu-item">
+      <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1551782450-a2132b4ba21d');"></div>
+      <h4>Комбо «Друзья»</h4>
+      <p>3 бургера + 3 напитка — отличная экономия</p>
+      <p class="meta">7400 ₸</p>
+      <button class="add">Добавить</button>
+    </div>
+  </div>
 </section>
 
-<section id="faq" class="faq-section">
-    <h3 class="section-title">Топ 10 популярных вопросов</h3>
-    <div class="accordion">
-        <div class="acc-item">
-            <button class="acc-head">1. Какие у вас часы работы?<span class="triangle">▼</span></button>
-            <div class="acc-body"><div class="acc-body-inner">Мы открыты ежедневно с 10:00 до 23:00.</div></div>
-        </div>
-        <div class="acc-item">
-            <button class="acc-head">2. Где вы находитесь?<span class="triangle">▼</span></button>
-            <div class="acc-body"><div class="acc-body-inner">Наш ресторан находится на ул. Вкусная, 15.</div></div>
-        </div>
-        <div class="acc-item">
-            <button class="acc-head">3. Есть ли у вас доставка?<span class="triangle">▼</span></button>
-            <div class="acc-body"><div class="acc-body-inner">Да, мы доставляем заказы по всему городу.</div></div>
-        </div>
-        <div class="acc-item">
-            <button class="acc-head">4. Как оформить заказ онлайн?<span class="triangle">▼</span></button>
-            <div class="acc-body"><div class="acc-body-inner">Просто выберите бургеры и нажмите "Заказать".</div></div>
-        </div>
-        <div class="acc-item">
-            <button class="acc-head">5. Делаете ли вы бургеры без мяса?<span class="triangle">▼</span></button>
-            <div class="acc-body"><div class="acc-body-inner">Да! У нас есть вкусные вегетарианские варианты.</div></div>
-        </div>
-        <div class="acc-item">
-            <button class="acc-head">6. Есть ли у вас акции?<span class="triangle">▼</span></button>
-            <div class="acc-body"><div class="acc-body-inner">Постоянно! Следите за нашими предложениями на сайте.</div></div>
-        </div>
-        <div class="acc-item">
-            <button class="acc-head">7. Можно ли оплатить картой?<span class="triangle">▼</span></button>
-            <div class="acc-body"><div class="acc-body-inner">Конечно, принимаем все виды карт.</div></div>
-        </div>
-        <div class="acc-item">
-            <button class="acc-head">8. Есть ли детское меню?<span class="triangle">▼</span></button>
-            <div class="acc-body"><div class="acc-body-inner">Да, в нём мини-бургеры и напитки для детей.</div></div>
-        </div>
-        <div class="acc-item">
-            <button class="acc-head">9. Можно ли заказать на определённое время?<span class="triangle">▼</span></button>
-            <div class="acc-body"><div class="acc-body-inner">Да, укажите время в комментарии к заказу.</div></div>
-        </div>
-        <div class="acc-item">
-            <button class="acc-head">10. Как связаться с вами?<span class="triangle">▼</span></button>
-            <div class="acc-body"><div class="acc-body-inner">Вы можете позвонить по телефону +7 (999) 123-45-67.</div></div>
-        </div>
+<!-- ==================== PROMO ==================== -->
+<section id="promo" class="promo-section fade-up">
+  <h3 class="section-title">🎁 Наши акции</h3>
+  <div class="promo-grid">
+    <div class="promo-card">
+      <img src="https://images.unsplash.com/photo-1603052875875-64f8e6b2c8c0" alt="">
+      <h4>2 по цене 1!</h4>
+      <p>Закажи два классических бургера — второй в подарок!</p>
     </div>
+    <div class="promo-card">
+      <img src="https://images.unsplash.com/photo-1625948967010-861c94d59a8d" alt="">
+      <h4>Семейный день</h4>
+      <p>Скидка 15% на заказ от 10000 ₸ по воскресеньям.</p>
+    </div>
+  </div>
 </section>
 
-<footer class="site-footer">
-    <p>© 2025 Burger House. Все права защищены.</p>
+<!-- ==================== REVIEWS ==================== -->
+<section id="reviews" class="reviews-section fade-up">
+  <h3 class="section-title">💬 Отзывы гостей</h3>
+  <div class="reviews-grid">
+    <div class="review"><p>«Бургеры супер! Сочные, вкусные!»</p><p class="author">— Алия</p></div>
+    <div class="review"><p>«Доставка быстрая, всё горячее.»</p><p class="author">— Руслан</p></div>
+    <div class="review"><p>«Лучшие бургеры в городе!»</p><p class="author">— Тимур</p></div>
+  </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about" class="about-section fade-up">
+  <h3 class="section-title">🏠 О нас</h3>
+  <p class="about-text">
+    Shama Burgers — это место, где вкус и качество стоят на первом месте. Мы готовим из 100% говядины и свежих булочек.
+  </p>
+</section>
+
+<!-- ==================== TEAM ==================== -->
+<section id="team" class="team-section fade-up">
+  <h3 class="section-title">👨‍🍳 Наша команда</h3>
+  <div class="team-grid">
+    <div class="team-member">
+      <img src="https://images.unsplash.com/photo-1525171254930-643fc658b64e" alt="Шеф">
+      <h4>Алексей</h4>
+      <p>Главный шеф-повар</p>
+    </div>
+    <div class="team-member">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="Повар">
+      <h4>Мария</h4>
+      <p>Бармен и создатель коктейлей</p>
+    </div>
+    <div class="team-member">
+      <img src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6" alt="Повар">
+      <h4>Ильяс</h4>
+      <p>Специалист по мясу и грилю</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ORDER FORM ==================== -->
+<section id="order" class="order-section fade-up">
+  <h3 class="section-title">🧾 Сделать заказ онлайн</h3>
+  <form class="order-form">
+    <label>Имя:<input type="text" placeholder="Введите имя" required></label>
+    <label>Телефон:<input type="tel" placeholder="+7..." required></label>
+    <label>Выберите бургер:
+      <select>
+        <option>Shama Classic</option>
+        <option>Hot Burger</option>
+        <option>Cheese Burger</option>
+      </select>
+    </label>
+    <label>Количество:<input type="number" min="1" max="10" value="1"></label>
+    <label>Комментарий:<textarea placeholder="Без лука, без соуса и т.д."></textarea></label>
+    <button type="submit" class="btn">Отправить заказ</button>
+  </form>
+</section>
+
+<!-- ==================== MAP ==================== -->
+<section id="map" class="map-section fade-up">
+  <h3 class="section-title">🗺 Мы на карте</h3>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps?q=Shymkent&output=embed"></iframe>
+  </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section id="faq" class="faq-section fade-up">
+  <h3 class="section-title">❓ Часто задаваемые вопросы</h3>
+  <div class="accordion">
+    <div class="acc-item">
+      <button class="acc-head">Есть ли доставка?<span>▾</span></button>
+      <div class="acc-body"><p>Да, доставка по городу от 1000 ₸.</p></div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">Можно ли заказать по телефону?<span>▾</span></button>
+      <div class="acc-body"><p>Да, просто позвоните по номеру выше.</p></div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-head">Есть ли халяль-продукты?<span>▾</span></button>
+      <div class="acc-body"><p>Да, вся продукция халяль.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact" class="contact-section fade-up">
+  <h3 class="section-title">📍 Контакты</h3>
+  <p>📞 +7 702 507 3828</p>
+  <p>📍 г. Шымкент, пр. Тауке хана, 45</p>
+  <p>🕑 Ежедневно: 10:00 — 02:00</p>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <p>© 2025 Shama Burgers. Все права защищены.</p>
+  <button class="to-top">⬆ Наверх</button>
 </footer>
 
+<!-- ==================== JS ==================== -->
 <script>
-const accHeads = document.querySelectorAll('.acc-head');
-accHeads.forEach(head => {
-    head.addEventListener('click', () => {
-        const body = head.nextElementSibling;
-        const open = body.style.height && body.style.height !== '0px';
-        document.querySelectorAll('.acc-body').forEach(b => b.style.height = '0');
-        if (!open) body.style.height = body.scrollHeight + 'px';
+  // Анимация меню
+  document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.top-nav').classList.toggle('open');
+  });
+
+  // Аккордеон
+  document.querySelectorAll('.acc-head').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      item.classList.toggle('open');
     });
-});
+  });
+
+  // Кнопка "вверх"
+  const toTop = document.querySelector('.to-top');
+  window.addEventListener('scroll', () => {
+    toTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Форма заказа
+  document.querySelector('.order-form').addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Спасибо! Ваш заказ принят.');
+    e.target.reset();
+  });
 </script>
 </body>
 </html>
