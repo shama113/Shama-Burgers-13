@@ -1,0 +1,118 @@
+--- index.html ---
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger House</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+    <div class="brand">
+        <img src="https://images.unsplash.com/photo-1606755962773-0f3c57ae8e96?q=80&w=100&auto=format&fit=crop" alt="Burger Logo" class="burger-logo rotating">
+        <h1>Burger House</h1>
+    </div>
+    <nav class="top-nav">
+        <a href="#menu">Меню</a>
+        <a href="#promo">Акции</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#contact" class="cta">Заказать</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-left">
+        <h2>Самые вкусные бургеры города!</h2>
+        <p>Попробуй наши новинки и почувствуй вкус, который ты запомнишь надолго.</p>
+        <a href="#menu" class="btn">Посмотреть меню</a>
+    </div>
+    <div class="hero-right">
+        <div class="hero-photo"></div>
+    </div>
+</section>
+
+<section id="menu" class="menu-section">
+    <h3 class="section-title">Меню бургеров</h3>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1606755962773-0f3c57ae8e96?q=80&w=600');"></div>
+            <h4>Классический бургер</h4>
+            <button class="add">Добавить</button>
+        </div>
+        <div class="menu-item">
+            <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1604147706283-d8ec2a0ca36a?q=80&w=600');"></div>
+            <h4>Чизбургер</h4>
+            <button class="add">Добавить</button>
+        </div>
+        <div class="menu-item">
+            <div class="menu-photo" style="background-image:url('https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=600');"></div>
+            <h4>Двойной бургер</h4>
+            <button class="add">Добавить</button>
+        </div>
+    </div>
+</section>
+
+<section id="faq" class="faq-section">
+    <h3 class="section-title">Топ 10 популярных вопросов</h3>
+    <div class="accordion">
+        <div class="acc-item">
+            <button class="acc-head">1. Какие у вас часы работы?<span class="triangle">▼</span></button>
+            <div class="acc-body"><div class="acc-body-inner">Мы открыты ежедневно с 10:00 до 23:00.</div></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-head">2. Где вы находитесь?<span class="triangle">▼</span></button>
+            <div class="acc-body"><div class="acc-body-inner">Наш ресторан находится на ул. Вкусная, 15.</div></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-head">3. Есть ли у вас доставка?<span class="triangle">▼</span></button>
+            <div class="acc-body"><div class="acc-body-inner">Да, мы доставляем заказы по всему городу.</div></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-head">4. Как оформить заказ онлайн?<span class="triangle">▼</span></button>
+            <div class="acc-body"><div class="acc-body-inner">Просто выберите бургеры и нажмите "Заказать".</div></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-head">5. Делаете ли вы бургеры без мяса?<span class="triangle">▼</span></button>
+            <div class="acc-body"><div class="acc-body-inner">Да! У нас есть вкусные вегетарианские варианты.</div></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-head">6. Есть ли у вас акции?<span class="triangle">▼</span></button>
+            <div class="acc-body"><div class="acc-body-inner">Постоянно! Следите за нашими предложениями на сайте.</div></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-head">7. Можно ли оплатить картой?<span class="triangle">▼</span></button>
+            <div class="acc-body"><div class="acc-body-inner">Конечно, принимаем все виды карт.</div></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-head">8. Есть ли детское меню?<span class="triangle">▼</span></button>
+            <div class="acc-body"><div class="acc-body-inner">Да, в нём мини-бургеры и напитки для детей.</div></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-head">9. Можно ли заказать на определённое время?<span class="triangle">▼</span></button>
+            <div class="acc-body"><div class="acc-body-inner">Да, укажите время в комментарии к заказу.</div></div>
+        </div>
+        <div class="acc-item">
+            <button class="acc-head">10. Как связаться с вами?<span class="triangle">▼</span></button>
+            <div class="acc-body"><div class="acc-body-inner">Вы можете позвонить по телефону +7 (999) 123-45-67.</div></div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <p>© 2025 Burger House. Все права защищены.</p>
+</footer>
+
+<script>
+const accHeads = document.querySelectorAll('.acc-head');
+accHeads.forEach(head => {
+    head.addEventListener('click', () => {
+        const body = head.nextElementSibling;
+        const open = body.style.height && body.style.height !== '0px';
+        document.querySelectorAll('.acc-body').forEach(b => b.style.height = '0');
+        if (!open) body.style.height = body.scrollHeight + 'px';
+    });
+});
+</script>
+</body>
+</html>
